@@ -62,4 +62,26 @@ class SimpleVector3DFactorySpec extends Specification {
 		then:"assert the vector from method create(double[] d)"
 		v.getInternalVector() == v2.getInternalVector()
 	}
+	
+	def"test meethod create(double x, double y, double z) JCUDA"(){
+		def factory= new SimpleVector3DFactory();
+		factory.myVectorType=Vector3DType.JCUDA;
+		when:"make a new vector usint method create(x,y,z)"
+		def v=factory.create(1, 2, 3)
+		def v2 = new JCudaVector3D (1,2,3)
+		then:"assert the vector from method create(x,y,z)"
+		v.getInternalVector() == v2.getInternalVector()
+	}
+
+
+	def"test meethod create(double [] d) JCUDA"(){
+		def factory= new SimpleVector3DFactory();
+		factory.myVectorType=Vector3DType.JCUDA;
+		double[] d=[1, 2, 3]
+		when:"make a new vector usint method create(double[] d)"
+		def v=factory.create(d)
+		def v2 = new JCudaVector3D (1,2,3)
+		then:"assert the vector from method create(double[] d)"
+		v.getInternalVector() == v2.getInternalVector()
+	}
 }

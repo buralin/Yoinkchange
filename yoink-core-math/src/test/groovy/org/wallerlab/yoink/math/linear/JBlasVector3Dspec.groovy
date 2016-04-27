@@ -10,14 +10,6 @@ class JBlasVector3Dspec extends Specification{
 		then:
 		assert internalVector.class == DoubleMatrix
 	}
-/*	def "costructor (x,y,z)" (){
-		when:
-		def jblasVector= new JBlasVector3D(0,0,0);
-		println jblasVector
-		
-		then:
-		commonsVector.internalVector.equals(vectorFromLibrary);
-	}*/
 	def" create a 3D vector using double array "(){
 		double[] d=[0.1, 0.1, 0.1]
 		when:

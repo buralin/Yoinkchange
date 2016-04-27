@@ -69,14 +69,12 @@ public class CommonsMatrix implements Matrix<RealMatrix> {
 
 	@Override
 	public double getEntry(int row, int column) {
-
 		return this.internalMatrix.getEntry(row, column);
 	}
 
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override
 	public Matrix transpose() {
-
 		tempMatrix = this.internalMatrix.transpose();
 		Matrix newMatrix = new CommonsMatrix();
 		newMatrix.setInternalMatrix(tempMatrix);

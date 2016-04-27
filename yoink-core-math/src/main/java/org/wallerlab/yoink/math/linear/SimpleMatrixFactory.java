@@ -33,6 +33,9 @@ public class SimpleMatrixFactory {
 		case JBLAS:
 			newMatrixInstance = new JBlasMatrix();
 			break;
+		case JCUBLAS:
+			newMatrixInstance = new JBlasMatrix();
+			break;
 		default:
 			newMatrixInstance = null;
 			throw new IllegalArgumentException("Invalid type of matrix: "
@@ -50,6 +53,9 @@ public class SimpleMatrixFactory {
 		case JBLAS:
 			newMatrixInstance = new JBlasMatrix(3, 3);
 			break;
+		case JCUBLAS:
+			newMatrixInstance = new JCublasMatrix(3, 3);
+			break;
 		default:
 			newMatrixInstance = null;
 			throw new IllegalArgumentException("Invalid type of matrix: "
@@ -66,6 +72,9 @@ public class SimpleMatrixFactory {
 			break;
 		case JBLAS:
 			newMatrixInstance = new JBlasMatrix(1, 3);
+			break;
+		case JCUBLAS:
+			newMatrixInstance = new JCublasMatrix(1, 3);
 			break;
 		default:
 			newMatrixInstance = null;

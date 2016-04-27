@@ -44,6 +44,9 @@ public class SimpleVector3DFactory {
 		case JBLAS:
 			myVector = new JBlasVector3D(x, y, z);
 			break;
+		case JCUDA:
+			myVector = new JCudaVector3D(x, y, z);
+			break;
 		default:
 			myVector = null;
 			throw new IllegalArgumentException("Invalid type of vector: "
@@ -67,6 +70,9 @@ public class SimpleVector3DFactory {
 			break;
 		case JBLAS:
 			myVector = new JBlasVector3D(d);
+			break;
+		case JCUDA:
+			myVector = new JCudaVector3D(d);
 			break;
 		default:
 			myVector = null;

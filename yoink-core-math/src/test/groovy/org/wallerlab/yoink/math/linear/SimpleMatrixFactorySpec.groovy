@@ -17,6 +17,7 @@ package org.wallerlab.yoink.math.linear
 
 import org.wallerlab.yoink.api.service.math.Matrix;
 
+import spock.lang.Ignore;
 import spock.lang.Specification;
 
 class SimpleMatrixFactorySpec extends Specification {
@@ -72,6 +73,28 @@ class SimpleMatrixFactorySpec extends Specification {
 		m=myMatrix.vector3D()
 		d=[[0, 0, 0]]
 		then:"chekc the return value"
+		m.getData()==d
+	}
+	@Ignore
+	def "test methods: matrix(), matrix3x3 JCublas"(){
+		def myMatrix= new SimpleMatrixFactory()
+		myMatrix.matrixType= Matrix.Type.JCUBLAS;
+
+		when:"call method matrix()"
+		def m=myMatrix.matrix();
+		then:"check the return type"
+		m instanceof Matrix
+		m instanceof JBlasMatrix
+
+		when:"call method matrix3x3()"
+		m=myMatrix.matrix3x3()
+		double[][]	d=[
+			[0, 0, 0],
+			[0, 0, 0],
+			[0, 0, 0
+			]
+		]
+		then:"check the return value"
 		m.getData()==d
 	}
 }

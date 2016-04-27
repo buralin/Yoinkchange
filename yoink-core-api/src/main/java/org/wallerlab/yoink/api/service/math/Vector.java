@@ -162,7 +162,7 @@ public interface Vector<T> {
 	 */
 	public enum Vector3DType {
 
-		COMMONS, JBLAS
+		COMMONS, JBLAS, JCUDA
 	}
 
 }

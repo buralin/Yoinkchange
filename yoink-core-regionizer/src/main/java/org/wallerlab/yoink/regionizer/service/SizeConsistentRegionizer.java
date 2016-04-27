@@ -87,13 +87,12 @@ public class SizeConsistentRegionizer extends ParameterRegionizer {
 		checkCriteria(qmAdaptiveRegion, bufferRegion,
 				distanceAndMoleculeSequence, qmNumber, distance_s_qm_in,
 				distance_t_qm_out);
-
 	}
 
 	private void checkCriteria(Region qmAdaptiveRegion, Region bufferRegion,
 			Map<Molecule, Double> distanceAndMoleculeSequence, int qmNumber,
 			double distance_s_qm_in, double distance_t_qm_out) {
-
+		
 		List<Molecule> moleculeSequence = new ArrayList<Molecule>(
 				distanceAndMoleculeSequence.keySet());
 		List<Double> distanceSequence = new ArrayList<Double>(
@@ -104,13 +103,21 @@ public class SizeConsistentRegionizer extends ParameterRegionizer {
 				qmNumber);
 		for (Molecule molecule : adaptiveQMMolecules) {
 			qmAdaptiveRegion.addMolecule(molecule, molecule.getIndex());
+			
 		}
-
+		
 		int endIndexBuffer = 0;
 
 		for (int i = 0; i < distanceSequence.size(); i++) {
+			
+			System.out.println("mol 1 " + distanceSequence.get(0));
+			System.out.println("mol 2 " + distanceSequence.get(1));
+			System.out.println("mol 3 " + distanceSequence.get(2));
 
+			System.out.println(distance_t_qm_out);
+			
 			if (distanceSequence.get(i) > distance_t_qm_out) {
+				
 				endIndexBuffer = i + 1;
 			
 			break;
@@ -120,7 +127,7 @@ public class SizeConsistentRegionizer extends ParameterRegionizer {
 
 		List<Molecule> bufferMolecules = moleculeSequence.subList(qmNumber,
 				endIndexBuffer);
-
+		
 		for (Molecule molecule : bufferMolecules) {
 			bufferRegion.addMolecule(molecule, molecule.getIndex());
 		}
