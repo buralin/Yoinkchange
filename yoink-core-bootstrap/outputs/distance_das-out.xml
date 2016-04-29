@@ -3366,47 +3366,47 @@
     </parameterList>
     <propertyList title="Partitioning result  : ">
         <property title="QM and Buffer molecular indices">
-            <scalar dataType="QM molecules">[369, 474, 18, 24, 337, 207, 104, 455, 470, 129, 234, 120, 373, 375, 420, 33, 381, 150, 29, 1, 45]</scalar>
-            <scalar dataType="BUFFER molecules">[169, 261, 36, 452, 216, 351, 324, 285, 394, 344, 84, 400, 244, 204, 34, 341, 286]</scalar>
+            <scalar dataType="QM molecules">[207, 33, 470, 129, 1, 24, 381, 337, 373, 234, 369, 120, 455, 29, 104, 420, 375, 18, 474, 150, 45]</scalar>
+            <scalar dataType="BUFFER molecules">[344, 286, 36, 261, 216, 285, 204, 452, 84, 324, 244, 341, 169, 400, 34, 394, 351]</scalar>
         </property>
     </propertyList>
     <propertyList title="Smoothing result  :  weight factors   average smooth factor:  ">
         <property title="weight and smooth factors ">
-            <scalar dataType="weighted function" title="molecular indeices" id="[34, 36, 84, 169, 204, 216, 244, 261, 285, 286, 324, 341, 344, 351, 394, 400, 452]">0.021316994500392594</scalar>
-            <scalar dataType="weighted function" title="molecular indeices" id="[]">0.01812400586346461</scalar>
-            <scalar dataType="weighted function" title="molecular indeices" id="[34, 84, 169, 204, 216, 244, 261, 285, 286, 324, 341, 344, 351, 394, 400, 452]">0.09779335903610153</scalar>
-            <scalar dataType="weighted function" title="molecular indeices" id="[169, 244, 285, 286, 344, 452]">0.08780550569386378</scalar>
-            <scalar dataType="weighted function" title="molecular indeices" id="[34, 84, 169, 204, 216, 244, 261, 285, 286, 341, 344, 351, 452]">0.036384143873715136</scalar>
-            <scalar dataType="weighted function" title="molecular indeices" id="[169, 204, 244, 261, 285, 286, 344, 452]">0.09889439187722476</scalar>
-            <scalar dataType="weighted function" title="molecular indeices" id="[34, 169, 204, 216, 244, 261, 285, 286, 341, 344, 452]">5.911049448072969E-4</scalar>
-            <scalar dataType="weighted function" title="molecular indeices" id="[244, 285, 286, 344, 452]">0.07261467552902573</scalar>
-            <scalar dataType="weighted function" title="molecular indeices" id="[244, 286]">0.0012322565382424933</scalar>
-            <scalar dataType="weighted function" title="molecular indeices" id="[244, 285, 286]">0.014115072775628477</scalar>
-            <scalar dataType="weighted function" title="molecular indeices" id="[244, 285, 286, 452]">0.008019448971700482</scalar>
-            <scalar dataType="weighted function" title="molecular indeices" id="[169, 204, 244, 285, 286, 344, 452]">0.0338234680691574</scalar>
-            <scalar dataType="weighted function" title="molecular indeices" id="[244]">0.03152668992510771</scalar>
-            <scalar dataType="weighted function" title="molecular indeices" id="[169, 204, 216, 244, 261, 285, 286, 341, 344, 452]">0.226973802645819</scalar>
-            <scalar dataType="weighted function" title="molecular indeices" id="[34, 84, 169, 204, 216, 244, 261, 285, 286, 324, 341, 344, 351, 400, 452]">0.013317854363536608</scalar>
-            <scalar dataType="weighted function" title="molecular indeices" id="[169, 204, 216, 244, 261, 285, 286, 344, 452]">0.03800681321915772</scalar>
-            <scalar dataType="weighted function" title="molecular indeices" id="[34, 84, 169, 204, 216, 244, 261, 285, 286, 341, 344, 452]">0.07621845962976193</scalar>
-            <scalar dataType="weighted function" title="molecular indeices" id="[34, 84, 169, 204, 216, 244, 261, 285, 286, 324, 341, 344, 351, 452]">0.12324195254329273</scalar>
-            <scalar dataType="smooth function" title="molecular index" id="169">0.1456321496031695</scalar>
-            <scalar dataType="smooth function" title="molecular index" id="261">0.2672611233661907</scalar>
-            <scalar dataType="smooth function" title="molecular index" id="36">0.9786830054996074</scalar>
-            <scalar dataType="smooth function" title="molecular index" id="452">0.06499802510244329</scalar>
-            <scalar dataType="smooth function" title="molecular index" id="216">0.36615551524341544</scalar>
-            <scalar dataType="smooth function" title="molecular index" id="351">0.7079456956829614</scalar>
-            <scalar dataType="smooth function" title="molecular index" id="324">0.7443298395566765</scalar>
-            <scalar dataType="smooth function" title="molecular index" id="285">0.05088295232681481</scalar>
-            <scalar dataType="smooth function" title="molecular index" id="394">0.8808896464635059</scalar>
-            <scalar dataType="smooth function" title="molecular index" id="344">0.07301747407414377</scalar>
-            <scalar dataType="smooth function" title="molecular index" id="84">0.6317272360531995</scalar>
-            <scalar dataType="smooth function" title="molecular index" id="400">0.8675717920999693</scalar>
-            <scalar dataType="smooth function" title="molecular index" id="244">0.01812400586346461</scalar>
-            <scalar dataType="smooth function" title="molecular index" id="204">0.23343765529703328</scalar>
-            <scalar dataType="smooth function" title="molecular index" id="34">0.6311361311083922</scalar>
-            <scalar dataType="smooth function" title="molecular index" id="341">0.40416232846257316</scalar>
-            <scalar dataType="smooth function" title="molecular index" id="286">0.04965069578857232</scalar>
+            <scalar dataType="weighted function" title="molecular indeices" id="[34, 36, 84, 169, 204, 216, 244, 261, 285, 286, 324, 341, 344, 351, 394, 400, 452]">0.02131704041372573</scalar>
+            <scalar dataType="weighted function" title="molecular indeices" id="[]">0.018124064103798503</scalar>
+            <scalar dataType="weighted function" title="molecular indeices" id="[169, 244, 285, 286, 344, 452]">0.08780778100682884</scalar>
+            <scalar dataType="weighted function" title="molecular indeices" id="[34, 84, 169, 204, 216, 244, 261, 285, 286, 324, 341, 344, 351, 394, 400, 452]">0.09779319648579365</scalar>
+            <scalar dataType="weighted function" title="molecular indeices" id="[34, 84, 169, 204, 216, 244, 261, 285, 286, 341, 344, 351, 452]">0.03638452636929024</scalar>
+            <scalar dataType="weighted function" title="molecular indeices" id="[169, 204, 244, 261, 285, 286, 344, 452]">0.09889573206414376</scalar>
+            <scalar dataType="weighted function" title="molecular indeices" id="[34, 169, 204, 216, 244, 261, 285, 286, 341, 344, 452]">5.894315333011546E-4</scalar>
+            <scalar dataType="weighted function" title="molecular indeices" id="[244, 285, 286, 344, 452]">0.07261405114934559</scalar>
+            <scalar dataType="weighted function" title="molecular indeices" id="[244, 286]">0.0012334757550047787</scalar>
+            <scalar dataType="weighted function" title="molecular indeices" id="[244, 285, 286]">0.014115148311701887</scalar>
+            <scalar dataType="weighted function" title="molecular indeices" id="[244, 285, 286, 452]">0.00801920285303799</scalar>
+            <scalar dataType="weighted function" title="molecular indeices" id="[169, 204, 244, 285, 286, 344, 452]">0.03382098836197325</scalar>
+            <scalar dataType="weighted function" title="molecular indeices" id="[244]">0.03152613307587099</scalar>
+            <scalar dataType="weighted function" title="molecular indeices" id="[169, 204, 216, 244, 261, 285, 286, 341, 344, 452]">0.22697382079823558</scalar>
+            <scalar dataType="weighted function" title="molecular indeices" id="[34, 84, 169, 204, 216, 244, 261, 285, 286, 324, 341, 344, 351, 400, 452]">0.013316413324274357</scalar>
+            <scalar dataType="weighted function" title="molecular indeices" id="[169, 204, 216, 244, 261, 285, 286, 344, 452]">0.03800676808575182</scalar>
+            <scalar dataType="weighted function" title="molecular indeices" id="[34, 84, 169, 204, 216, 244, 261, 285, 286, 341, 344, 452]">0.0762193610071803</scalar>
+            <scalar dataType="weighted function" title="molecular indeices" id="[34, 84, 169, 204, 216, 244, 261, 285, 286, 324, 341, 344, 351, 452]">0.12324286530074158</scalar>
+            <scalar dataType="smooth function" title="molecular index" id="344">0.07301802409941414</scalar>
+            <scalar dataType="smooth function" title="molecular index" id="286">0.04965019717966949</scalar>
+            <scalar dataType="smooth function" title="molecular index" id="36">0.9786829595862743</scalar>
+            <scalar dataType="smooth function" title="molecular index" id="261">0.26726084461756183</scalar>
+            <scalar dataType="smooth function" title="molecular index" id="216">0.3661565766817056</scalar>
+            <scalar dataType="smooth function" title="molecular index" id="285">0.050883672934674266</scalar>
+            <scalar dataType="smooth function" title="molecular index" id="204">0.23343985625558858</scalar>
+            <scalar dataType="smooth function" title="molecular index" id="452">0.06499882124637615</scalar>
+            <scalar dataType="smooth function" title="molecular index" id="84">0.6317265970989941</scalar>
+            <scalar dataType="smooth function" title="molecular index" id="324">0.7443304844754647</scalar>
+            <scalar dataType="smooth function" title="molecular index" id="244">0.018124064103798503</scalar>
+            <scalar dataType="smooth function" title="molecular index" id="341">0.4041633447674574</scalar>
+            <scalar dataType="smooth function" title="molecular index" id="169">0.14563207524875973</scalar>
+            <scalar dataType="smooth function" title="molecular index" id="400">0.8675733497762063</scalar>
+            <scalar dataType="smooth function" title="molecular index" id="34">0.631137165565693</scalar>
+            <scalar dataType="smooth function" title="molecular index" id="394">0.8808897631004806</scalar>
+            <scalar dataType="smooth function" title="molecular index" id="351">0.7079459581061744</scalar>
         </property>
         <property/>
         <property/>

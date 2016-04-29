@@ -127,7 +127,7 @@
                 <atom id="58" x3="2.76" z3="21.06" y3="19.83" elementType="H"/>
             </atomArray>
         </molecule>
-        <molecule id="QM_ADAPTIVE">
+        <molecule id="MM">
             <atomArray>
                 <atom id="59" x3="13.11" z3="9.95" y3="15.37" elementType="O"/>
                 <atom id="60" x3="13.72" z3="9.23" y3="15.2" elementType="H"/>
@@ -232,7 +232,7 @@
                 <atom id="103" x3="19.77" z3="21.07" y3="9.03" elementType="H"/>
             </atomArray>
         </molecule>
-        <molecule id="QM_ADAPTIVE">
+        <molecule id="MM">
             <atomArray>
                 <atom id="104" x3="10.33" z3="12.39" y3="7.94" elementType="O"/>
                 <atom id="105" x3="9.92" z3="12.59" y3="7.1" elementType="H"/>
@@ -316,7 +316,7 @@
                 <atom id="139" x3="18.57" z3="2.81" y3="7.12" elementType="H"/>
             </atomArray>
         </molecule>
-        <molecule id="QM_ADAPTIVE">
+        <molecule id="MM">
             <atomArray>
                 <atom id="140" x3="11.17" z3="15.01" y3="9.47" elementType="O"/>
                 <atom id="141" x3="10.29" z3="15.37" y3="9.46" elementType="H"/>
@@ -841,7 +841,7 @@
                 <atom id="364" x3="12.99" z3="22.67" y3="0.02" elementType="H"/>
             </atomArray>
         </molecule>
-        <molecule id="QM_ADAPTIVE">
+        <molecule id="MM">
             <atomArray>
                 <atom id="365" x3="9.28" z3="9.15" y3="11.2" elementType="O"/>
                 <atom id="366" x3="8.33" z3="9.18" y3="11.28" elementType="H"/>
@@ -904,7 +904,7 @@
                 <atom id="391" x3="1.58" z3="19.7" y3="2.3" elementType="H"/>
             </atomArray>
         </molecule>
-        <molecule id="QM_ADAPTIVE">
+        <molecule id="MM">
             <atomArray>
                 <atom id="392" x3="13.13" z3="15.0" y3="14.11" elementType="O"/>
                 <atom id="393" x3="13.28" z3="15.82" y3="13.64" elementType="H"/>
@@ -1450,7 +1450,7 @@
                 <atom id="625" x3="17.13" z3="21.7" y3="15.43" elementType="H"/>
             </atomArray>
         </molecule>
-        <molecule id="QM_ADAPTIVE">
+        <molecule id="MM">
             <atomArray>
                 <atom id="626" x3="9.51" z3="16.1" y3="13.03" elementType="O"/>
                 <atom id="627" x3="9.58" z3="17.05" y3="13.02" elementType="H"/>
@@ -1639,7 +1639,7 @@
                 <atom id="706" x3="17.94" z3="14.52" y3="18.1" elementType="H"/>
             </atomArray>
         </molecule>
-        <molecule id="QM_ADAPTIVE">
+        <molecule id="MM">
             <atomArray>
                 <atom id="707" x3="10.18" z3="9.2" y3="14.18" elementType="O"/>
                 <atom id="708" x3="9.48" z3="9.79" y3="14.46" elementType="H"/>
@@ -2360,7 +2360,7 @@
                 <atom id="1015" x3="13.42" z3="21.0" y3="4.48" elementType="H"/>
             </atomArray>
         </molecule>
-        <molecule id="QM_ADAPTIVE">
+        <molecule id="MM">
             <atomArray>
                 <atom id="1016" x3="13.44" z3="8.54" y3="11.9" elementType="O"/>
                 <atom id="1017" x3="12.78" z3="9.2" y3="12.12" elementType="H"/>
@@ -2388,7 +2388,7 @@
                 <atom id="1027" x3="6.45" z3="6.73" y3="1.87" elementType="H"/>
             </atomArray>
         </molecule>
-        <molecule id="QM_ADAPTIVE">
+        <molecule id="MM">
             <atomArray>
                 <atom id="1028" x3="13.27" z3="17.37" y3="12.79" elementType="O"/>
                 <atom id="1029" x3="14.0" z3="17.05" y3="12.26" elementType="H"/>
@@ -2584,7 +2584,7 @@
                 <atom id="1111" x3="3.34" z3="20.82" y3="13.16" elementType="H"/>
             </atomArray>
         </molecule>
-        <molecule id="QM_ADAPTIVE">
+        <molecule id="MM">
             <atomArray>
                 <atom id="1112" x3="14.4" z3="11.51" y3="8.69" elementType="O"/>
                 <atom id="1113" x3="13.74" z3="12.17" y3="8.46" elementType="H"/>
@@ -2612,7 +2612,7 @@
                 <atom id="1123" x3="23.53" z3="5.49" y3="21.77" elementType="H"/>
             </atomArray>
         </molecule>
-        <molecule id="QM_ADAPTIVE">
+        <molecule id="MM">
             <atomArray>
                 <atom id="1124" x3="9.24" z3="13.08" y3="10.45" elementType="O"/>
                 <atom id="1125" x3="8.46" z3="12.6" y3="10.16" elementType="H"/>
@@ -2626,7 +2626,7 @@
                 <atom id="1129" x3="6.1" z3="8.47" y3="3.0" elementType="H"/>
             </atomArray>
         </molecule>
-        <molecule id="QM_ADAPTIVE">
+        <molecule id="MM">
             <atomArray>
                 <atom id="1130" x3="7.99" z3="12.55" y3="13.66" elementType="O"/>
                 <atom id="1131" x3="8.91" z3="12.31" y3="13.54" elementType="H"/>
@@ -2668,7 +2668,7 @@
                 <atom id="1147" x3="20.28" z3="8.37" y3="22.77" elementType="H"/>
             </atomArray>
         </molecule>
-        <molecule id="QM_ADAPTIVE">
+        <molecule id="MM">
             <atomArray>
                 <atom id="1148" x3="12.84" z3="13.42" y3="7.82" elementType="O"/>
                 <atom id="1149" x3="12.29" z3="13.98" y3="8.37" elementType="H"/>
@@ -3186,7 +3186,7 @@
                 <atom id="1369" x3="14.24" z3="17.61" y3="1.37" elementType="H"/>
             </atomArray>
         </molecule>
-        <molecule id="QM_ADAPTIVE">
+        <molecule id="MM">
             <atomArray>
                 <atom id="1370" x3="10.66" z3="10.05" y3="9.11" elementType="O"/>
                 <atom id="1371" x3="9.97" z3="9.92" y3="9.77" elementType="H"/>
@@ -3291,7 +3291,7 @@
                 <atom id="1414" x3="20.19" z3="19.39" y3="0.08" elementType="H"/>
             </atomArray>
         </molecule>
-        <molecule id="QM_ADAPTIVE">
+        <molecule id="MM">
             <atomArray>
                 <atom id="1415" x3="14.61" z3="14.14" y3="10.5" elementType="O"/>
                 <atom id="1416" x3="14.04" z3="14.65" y3="9.93" elementType="H"/>
@@ -3319,7 +3319,7 @@
                 <atom id="1426" x3="23.99" z3="15.24" y3="8.69" elementType="H"/>
             </atomArray>
         </molecule>
-        <molecule id="QM_ADAPTIVE">
+        <molecule id="MM">
             <atomArray>
                 <atom id="1427" x3="10.37" z3="12.86" y3="16.24" elementType="O"/>
                 <atom id="1428" x3="10.86" z3="12.8" y3="15.42" elementType="H"/>
@@ -3366,7 +3366,7 @@
     </parameterList>
     <propertyList title="Partitioning result  : ">
         <property title="QM and Buffer molecular indices">
-            <scalar dataType="QM molecules">[120, 455, 369, 341, 234, 373, 474, 45, 207, 375, 129, 337, 33, 18, 381, 1, 470]</scalar>
+            <scalar dataType="QM molecules">[1]</scalar>
             <scalar dataType="BUFFER molecules">[]</scalar>
         </property>
     </propertyList>
