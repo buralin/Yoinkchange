@@ -109,13 +109,7 @@ public class SizeConsistentRegionizer extends ParameterRegionizer {
 		int endIndexBuffer = 0;
 
 		for (int i = 0; i < distanceSequence.size(); i++) {
-			
-			System.out.println("mol 1 " + distanceSequence.get(0));
-			System.out.println("mol 2 " + distanceSequence.get(1));
-			System.out.println("mol 3 " + distanceSequence.get(2));
-
-			System.out.println(distance_t_qm_out);
-			
+	
 			if (distanceSequence.get(i) > distance_t_qm_out) {
 				
 				endIndexBuffer = i + 1;

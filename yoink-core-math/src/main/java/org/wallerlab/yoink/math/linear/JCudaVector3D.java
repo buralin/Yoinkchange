@@ -97,7 +97,7 @@ public class JCudaVector3D implements Vector<float []>{
 		//Copy the memory from the host to the device
 		JCublas.cublasSetVector(n, Sizeof.FLOAT, Pointer.to(internalVector), 1, deviceinternalVector, 1);
 		JCublas.cublasSetVector(n, Sizeof.FLOAT, Pointer.to(h), 1, deviceh, 1);
-		//Execute dotProduct
+		//Execute Substract
 		JCublas.cublasSaxpy(n, alpha, deviceh, 1, deviceinternalVector, 1);
 		//Copy the result from the device to the host
 	    JCublas.cublasGetVector(n, Sizeof.FLOAT, deviceinternalVector,1 , Pointer.to(internalVector),1);
@@ -122,6 +122,7 @@ public class JCudaVector3D implements Vector<float []>{
 	}
 	 public double distance(Vector m) {
 		 int n = internalVector.length;
+		 float alpha = -1.0f;
 		 float [] h = (float[]) m.getInternalVector();
 		//Initialize JCublas
 		JCublas.cublasInit();
@@ -133,16 +134,14 @@ public class JCudaVector3D implements Vector<float []>{
 		//Copy the memory from the host to the device
 		JCublas.cublasSetVector(n, Sizeof.FLOAT, Pointer.to(internalVector), 1, deviceinternalVector, 1);
 		JCublas.cublasSetVector(n, Sizeof.FLOAT, Pointer.to(h), 1, deviceh, 1);
-		//Execute euclideanNorm
-		float hnorm = JCublas.cublasSnrm2(n, deviceh, 1);
-		float internalVectornorm = JCublas.cublasSnrm2(n, deviceinternalVector, 1);
-		//Calculate dotProduct
-		float dotProduct = JCublas.cublasSdot(n, deviceinternalVector, 1, deviceh, 1);
+		//Calculate Substract
+		JCublas.cublasSaxpy(n, alpha, deviceh, 1, deviceinternalVector, 1);
+		//Calculate Norm
+		float x = JCublas.cublasSnrm2(n, deviceinternalVector, 1);
 		//Clean up
 		JCublas.cublasFree(deviceinternalVector);
 		JCublas.cublasFree(deviceh);
-		double y = Math.sqrt(Math.pow(hnorm, 2)+Math.pow(internalVectornorm, 2)-2*dotProduct);
-		return y;
+		return x;
 	 }
 	 public Vector ebeMultiply(Vector g) {
 		int n = internalVector.length;
