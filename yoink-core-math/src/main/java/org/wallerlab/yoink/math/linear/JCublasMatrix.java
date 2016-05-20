@@ -5,11 +5,15 @@ import jcuda.Sizeof;
 import jcuda.jcublas.JCublas;
 
 import org.wallerlab.yoink.api.service.math.Matrix;
-
-
-
-
-
+/**
+ * Vector Adaptor pattern.
+ * 
+ * thsi class is to convert from our own implementation to the JCublas
+ * maths lib.
+ * 
+ * @author Johannes Tölle
+ *
+ */
 public class JCublasMatrix implements Matrix <float[][]>{
 	private float [][] internalMatrix;
 	private float [][] tempMatrix;
@@ -66,23 +70,19 @@ public class JCublasMatrix implements Matrix <float[][]>{
 
 		//Initialize JCublas
 		JCublas.cublasInit();
-		
 		//Allocate memory on the device
 		Pointer deviceinternMatrix = new Pointer();
 		JCublas.cublasAlloc(nm, Sizeof.FLOAT,deviceinternMatrix);
 		Pointer deviceinternm = new Pointer();
 		JCublas.cublasAlloc(nm, Sizeof.FLOAT,deviceinternm);
-			
 		//Copy the memory from the host to the device
 		JCublas.cublasSetVector(nm, Sizeof.FLOAT, Pointer.to(internMatrix), 1, deviceinternMatrix, 1);
 		JCublas.cublasSetVector(nm, Sizeof.FLOAT, Pointer.to(internm), 1, deviceinternm, 1);
-		//Execute dotProduct
+		//Execute add
 		JCublas.cublasSaxpy(nm, alpha, deviceinternMatrix, 1, deviceinternm, 1);
-			
 		//Copy the result from the device to the host
 	    JCublas.cublasGetVector(nm, Sizeof.FLOAT, deviceinternm,1 , Pointer.to(internm),1);
 	    JCublas.cublasGetVector(nm, Sizeof.FLOAT, deviceinternMatrix,1 , Pointer.to(internMatrix),1);
-	    
 	    //Clean up
 		JCublas.cublasFree(deviceinternMatrix);
 		JCublas.cublasFree(deviceinternm);
@@ -124,10 +124,8 @@ public class JCublasMatrix implements Matrix <float[][]>{
 		double rowarray[] = new double [internalMatrix[0].length]; 
 		for (int j = 0; j< internalMatrix[0].length;j++){
 		rowarray [j]=  internalMatrix[i][j];
-
 	}
 		return rowarray;
-		
 	}
 	@Override
 	public double dotProduct() {
@@ -162,5 +160,4 @@ public class JCublasMatrix implements Matrix <float[][]>{
 		// TODO Auto-generated method stub
 		return null;
 	}
-
 }

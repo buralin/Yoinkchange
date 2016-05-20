@@ -6,10 +6,20 @@ import jcuda.Pointer;
 import jcuda.Sizeof;
 import jcuda.jcublas.JCublas;
 
-
+/**
+ * Vector Adaptor pattern.
+ * 
+ * thsi class is to convert from our own implementation to the JCublas
+ * maths lib.
+ * 
+ * @author Johannes Tölle
+ *
+ */
 
 public class JCudaVector3D implements Vector<float []>{
+	
 	private float [] internalVector;
+	// this vextor is used as intermediate vector in internalVector operation.
 	private float [] tempVector; 
 	
 	public JCudaVector3D (double x, double y, double z){
@@ -34,12 +44,11 @@ public class JCudaVector3D implements Vector<float []>{
 		JCublas.cublasAlloc(n, Sizeof.FLOAT,deviceinternalVector);
 		//Copy the memory from the host to the device
 		JCublas.cublasSetVector(n, Sizeof.FLOAT, Pointer.to(internalVector), 1, deviceinternalVector, 1);
-	    //Execute dotProduct ACTUNG AUCH FUNKTION DDOT FÜR DOUBLES!!!!!!
+	    //Execute dotProduct 
 		float x = JCublas.cublasSdot(n, deviceinternalVector, 1, deviceinternalVector, 1);
 	    //Clean up
 	    JCublas.cublasFree(deviceinternalVector);
 	    return (double) x;
-
 	}
 	public double getNorm(){
 		int n = internalVector.length;
@@ -50,7 +59,7 @@ public class JCudaVector3D implements Vector<float []>{
 		JCublas.cublasAlloc(n, Sizeof.FLOAT,deviceinternalVector);
 		//Copy the memory from the host to the device
 		JCublas.cublasSetVector(n, Sizeof.FLOAT, Pointer.to(internalVector), 1, deviceinternalVector, 1);
-	    //Execute dotProduct
+	    //Execute norm
 		float x = JCublas.cublasSnrm2(n, deviceinternalVector, 1);
 		//Copy the result from the device to the host
 		JCublas.cublasGetVector(n, Sizeof.FLOAT, deviceinternalVector,1 , Pointer.to(internalVector),1);
@@ -72,7 +81,7 @@ public class JCudaVector3D implements Vector<float []>{
 		//Copy the memory from the host to the device
 		JCublas.cublasSetVector(n, Sizeof.FLOAT, Pointer.to(internalVector), 1, deviceinternalVector, 1);
 		JCublas.cublasSetVector(n, Sizeof.FLOAT, Pointer.to(m), 1, deviceinternm, 1);
-		//Execute dotProduct
+		//Execute add
 		JCublas.cublasSaxpy(n, alpha, deviceinternalVector, 1, deviceinternm, 1);
 		//Copy the result from the device to the host
 	    JCublas.cublasGetVector(n, Sizeof.FLOAT, deviceinternm,1 , Pointer.to(m),1);
@@ -97,7 +106,7 @@ public class JCudaVector3D implements Vector<float []>{
 		//Copy the memory from the host to the device
 		JCublas.cublasSetVector(n, Sizeof.FLOAT, Pointer.to(internalVector), 1, deviceinternalVector, 1);
 		JCublas.cublasSetVector(n, Sizeof.FLOAT, Pointer.to(h), 1, deviceh, 1);
-		//Execute dotProduct
+		//Execute subtract
 		JCublas.cublasSaxpy(n, alpha, deviceh, 1, deviceinternalVector, 1);
 		//Copy the result from the device to the host
 	    JCublas.cublasGetVector(n, Sizeof.FLOAT, deviceinternalVector,1 , Pointer.to(internalVector),1);
@@ -136,18 +145,12 @@ public class JCudaVector3D implements Vector<float []>{
 		JCublas.cublasSetVector(n, Sizeof.FLOAT, Pointer.to(h), 1, deviceh, 1);
 		//Execute Subtract
 		JCublas.cublasSaxpy(n, alpha, deviceh, 1, deviceinternalVector, 1);
-		//Execute DOTPRODUCT
-		float x = JCublas.cublasSdot(n, deviceinternalVector, 1, deviceinternalVector, 1);
-				
-		//float hnorm = JCublas.cublasSnrm2(n, deviceh, 1);
-		//float internalVectornorm = JCublas.cublasSnrm2(n, deviceinternalVector, 1);
-		//Calculate dotProduct
-		//float dotProduct = JCublas.cublasSdot(n, deviceinternalVector, 1, deviceh, 1);
+		//Execute dotproduct
+		float x = JCublas.cublasSnrm2(n, deviceinternalVector, 1);
 		//Clean up
 		JCublas.cublasFree(deviceinternalVector);
 		JCublas.cublasFree(deviceh);
-		double y = Math.sqrt(x);
-		return y;
+		return x;
 	 }
 	 public Vector ebeMultiply(Vector g) {
 		int n = internalVector.length;
@@ -167,7 +170,7 @@ public class JCudaVector3D implements Vector<float []>{
 		JCublas.cublasSetVector(n, Sizeof.FLOAT, Pointer.to(internalVector), 1, deviceinternalVector, 1);
 		JCublas.cublasSetVector(n, Sizeof.FLOAT, Pointer.to(internalMatrix), 1, deviceinternalMatrix, 1);
 		JCublas.cublasSetVector(n, Sizeof.FLOAT, Pointer.to(m), 1, deviceinternm, 1);
-		//Execute dotProduct
+		//Execute ebeMultiply
 		JCublas.cublasSger(n, n, alpha, deviceinternalVector, 1, deviceinternm, 1, deviceinternalMatrix, n);
 		//Copy the result from the device to the host
 	    JCublas.cublasGetVector(n, Sizeof.FLOAT, deviceinternalMatrix,1 , Pointer.to(internalMatrix),1);
@@ -230,11 +233,10 @@ public class JCudaVector3D implements Vector<float []>{
 		JCublas.cublasAlloc(n, Sizeof.FLOAT,deviceinternalVector);
 		Pointer deviceinternalh = new Pointer();
 		JCublas.cublasAlloc(n, Sizeof.FLOAT,deviceinternalh);
-		
 		//Copy the memory from the host to the device
 		JCublas.cublasSetVector(n, Sizeof.FLOAT, Pointer.to(internalVector), 1, deviceinternalVector, 1);
 		JCublas.cublasSetVector(n, Sizeof.FLOAT, Pointer.to(h), 1, deviceinternalh, 1);
-		//Execute dotProduct
+		//Execute scalarmultiply
 		JCublas.cublasSaxpy(n, e, deviceinternalVector, 1, deviceinternalh, 1);
 		//Copy the result from the device to the host
 	    JCublas.cublasGetVector(n, Sizeof.FLOAT, deviceinternalh,1 , Pointer.to(h),1);

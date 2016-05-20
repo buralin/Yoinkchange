@@ -27,6 +27,7 @@ import org.wallerlab.yoink.api.model.molecular.Coord;
 import org.wallerlab.yoink.api.model.molecular.Molecule;
 import org.wallerlab.yoink.api.service.Calculator;
 import org.wallerlab.yoink.api.service.math.Vector;
+import org.wallerlab.yoink.math.linear.JCudaVector3D;
 
 /**
  * This class is to calculate the closest distance between one point in space and a molecule
@@ -53,6 +54,15 @@ public class ClosestDistanceToMoleculeCalculator implements Calculator<Double, C
 	 */
 	public Double calculate(Coord gridCoord, Molecule molecule) {
 		List<Double> distances = new ArrayList<Double>();
+		Vector coords = new JCudaVector3D();
+		double [] d= new double [3*molecule.getAtoms().size()];
+			for (int i = 0; i < molecule.getAtoms().size(); i+=3){
+			d[i] =  molecule.getAtoms().get(i).getCoordinate().getCoords().getX();
+			d[(i+1)] = molecule.getAtoms().get(i).getCoordinate().getCoords().getY();
+			d[(i+2)] = molecule.getAtoms().get(i).getCoordinate().getCoords().getZ();
+			}
+			coords.setInternalVector(d);
+			System.out.println("d LÄNGE ****** "+ d.length);
 		for (Atom atom : molecule.getAtoms()) {
 			double tempdistance = distanceCalculator.calculate(gridCoord,
 					atom);

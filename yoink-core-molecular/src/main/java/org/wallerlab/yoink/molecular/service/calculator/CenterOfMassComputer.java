@@ -26,6 +26,7 @@ import org.wallerlab.yoink.api.model.molecular.Molecule;
 import org.wallerlab.yoink.api.service.Computer;
 import org.wallerlab.yoink.api.service.Factory;
 import org.wallerlab.yoink.api.service.math.Vector;
+import org.wallerlab.yoink.math.linear.JCudaVector3D;
 import org.wallerlab.yoink.math.linear.SimpleVector3DFactory;
 import org.wallerlab.yoink.molecular.domain.SimpleCoord;
 import org.wallerlab.yoink.molecular.domain.SimpleCoordFactory;
@@ -56,8 +57,19 @@ public class CenterOfMassComputer implements Computer<Coord, Set<Molecule>> {
 	 */
 	public Coord calculate(Set<Molecule> molecules) {
 		double massOfMolecule = 0;
+		//double[] d;
 		Vector massWeightedCoordinate = myVector3D.create(0, 0, 0);
-		for (Molecule molecule : molecules) {
+		for (Molecule molecule : molecules) {/*
+			d = new double [3*molecule.getAtoms().size()];
+			for (int i = 0; i < molecule.getAtoms().size(); i+=3){
+			d[i] =  molecule.getAtoms().get(i).getCoordinate().getCoords().getX();
+			d[(i+1)] = molecule.getAtoms().get(i).getCoordinate().getCoords().getY();
+			d[(i+2)] = molecule.getAtoms().get(i).getCoordinate().getCoords().getZ();
+			
+			
+			double atomMass = atom.getElementType().atomMass();
+			JCudaVector3D h = new JCudaVector3D();*/
+			
 			for (Atom atom : molecule.getAtoms()) {
 				double atomMass = atom.getElementType().atomMass();
 				Vector matrix = atom.getCoordinate().getCoords();
@@ -65,6 +77,7 @@ public class CenterOfMassComputer implements Computer<Coord, Set<Molecule>> {
 				massWeightedCoordinate = matrix.add(massWeightedCoordinate);
 				massOfMolecule = massOfMolecule + atomMass;
 			}
+			
 		}
 		Coord centerCoord = setCOM(massWeightedCoordinate, massOfMolecule);
 		return centerCoord;
